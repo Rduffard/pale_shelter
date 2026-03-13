@@ -35,3 +35,5 @@ export function trackPlay(trackId) {
 export function getPlayCounts() {
   return fetch(`${API_BASE}/paleshelter`).then(checkResponse);
 }
+
+console.log("API BASE:", API_BASE);
