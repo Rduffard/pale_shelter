@@ -1,0 +1,130 @@
+.shows-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 45%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 1)), #050505;
+  color: #f4efe8;
+}
+
+.shows-page__hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 96px 24px 32px;
+}
+
+.shows-page__eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 232, 0.6);
+}
+
+.shows-page__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.shows-page__subtitle {
+  margin-top: 18px;
+  max-width: 600px;
+  color: rgba(244, 239, 232, 0.75);
+  line-height: 1.7;
+}
+
+.shows-page__list {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 96px;
+}
+
+.shows-page__card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(244, 239, 232, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.shows-page__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 239, 232, 0.25);
+}
+
+.shows-page__date {
+  text-align: center;
+  min-width: 64px;
+}
+
+.shows-page__month {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 239, 232, 0.6);
+}
+
+.shows-page__day {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.shows-page__venue {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.shows-page__location {
+  margin-top: 4px;
+  color: rgba(244, 239, 232, 0.7);
+}
+
+.shows-page__actions {
+  display: flex;
+  align-items: center;
+}
+
+.shows-page__button {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 239, 232, 0.2);
+  background: transparent;
+  color: #f4efe8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shows-page__button:hover {
+  background: #f4efe8;
+  color: #050505;
+}
+
+.shows-page__more {
+  margin-top: 36px;
+  color: rgba(244, 239, 232, 0.6);
+  font-size: 0.95rem;
+}
+
+.shows-page__button--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .shows-page__card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .shows-page__actions {
+    justify-content: flex-start;
+  }
+}

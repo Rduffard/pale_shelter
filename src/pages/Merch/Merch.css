@@ -1,0 +1,122 @@
+.merch-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 45%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 1)), #050505;
+  color: #f4efe8;
+}
+
+.merch-page__hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 112px 24px 96px;
+}
+
+.merch-page__eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 232, 0.6);
+}
+
+.merch-page__title {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.merch-page__subtitle {
+  max-width: 680px;
+  margin: 24px 0 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(244, 239, 232, 0.8);
+}
+
+.merch-page__panel {
+  margin-top: 48px;
+  padding: 32px;
+  border: 1px solid rgba(244, 239, 232, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+}
+
+.merch-page__panel-text {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(244, 239, 232, 0.78);
+}
+
+.merch-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.merch-page__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.merch-page__button:hover {
+  transform: translateY(-2px);
+}
+
+.merch-page__button--primary {
+  background: #f4efe8;
+  color: #050505;
+  border: 1px solid #f4efe8;
+}
+
+.merch-page__button--ghost {
+  background: transparent;
+  color: #f4efe8;
+  border: 1px solid rgba(244, 239, 232, 0.2);
+}
+
+.merch-page__button--ghost:hover {
+  border-color: rgba(244, 239, 232, 0.4);
+}
+
+@media (max-width: 640px) {
+  .merch-page__hero {
+    padding: 72px 20px 72px;
+  }
+
+  .merch-page__subtitle {
+    font-size: 1rem;
+  }
+
+  .merch-page__panel {
+    margin-top: 36px;
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .merch-page__actions {
+    flex-direction: column;
+  }
+
+  .merch-page__button {
+    width: 100%;
+  }
+}
