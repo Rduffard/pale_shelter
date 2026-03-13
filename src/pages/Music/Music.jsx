@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Music.css";
 import { tracks } from "../../data/tracks";
 import { getPlayCounts, trackPlay } from "../../utils/plays";
 
 function Music() {
   const [playCounts, setPlayCounts] = useState({});
+  const audioRefs = useRef({});
 
   useEffect(() => {
     getPlayCounts()
@@ -22,6 +23,12 @@ function Music() {
   }, []);
 
   const handleTrackPlay = (trackId) => {
+    Object.entries(audioRefs.current).forEach(([id, audio]) => {
+      if (id !== trackId && audio && !audio.paused) {
+        audio.pause();
+      }
+    });
+
     const sessionKey = `paleshelter-played-${trackId}`;
     const alreadyTracked = sessionStorage.getItem(sessionKey);
 
@@ -98,6 +105,9 @@ function Music() {
               </div>
 
               <audio
+                ref={(element) => {
+                  audioRefs.current[track.id] = element;
+                }}
                 className="track-card__player"
                 controls
                 preload="metadata"
