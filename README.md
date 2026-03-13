@@ -132,3 +132,5 @@ This project is part of the **Crossworld Creative** ecosystem, which includes:
 All music, artwork, and branding are property of Pale Shelter.
 
 Site code may be used for educational purposes.
+
+Site made by Romain Duffard
