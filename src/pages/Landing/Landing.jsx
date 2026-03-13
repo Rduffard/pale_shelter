@@ -29,13 +29,25 @@ function Landing() {
         </div>
 
         <div className="landing__links">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.facebook.com/palesheltermusic"
+            target="_blank"
+            rel="noreferrer"
+          >
             Facebook
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.youtube.com/channel/UCBgzPzXo6HvTiRB2n1GzOBg"
+            target="_blank"
+            rel="noreferrer"
+          >
             YouTube
           </a>
-          <a href="https://spotify.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://open.spotify.com/artist/2rrl6d6AQ73RanJg4lE76W"
+            target="_blank"
+            rel="noreferrer"
+          >
             Spotify
           </a>
         </div>
