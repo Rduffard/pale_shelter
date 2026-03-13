@@ -36,6 +36,26 @@ export default function Images() {
     setDisplayImages(shuffleArray(filtered));
   }, [activeFilter]);
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    if (selectedImage) {
+      window.addEventListener("keydown", handleEsc);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedImage]);
+
   const handleFilterClick = (filterValue) => {
     if (filterValue === activeFilter) {
       const filtered = getFilteredImages(filterValue);
@@ -117,13 +137,7 @@ export default function Images() {
         <div
           className="images-page__modal"
           onClick={closeModal}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(event) => {
-            if (event.key === "Escape") {
-              closeModal();
-            }
-          }}
+          role="presentation"
         >
           <div
             className="images-page__modal-content"
