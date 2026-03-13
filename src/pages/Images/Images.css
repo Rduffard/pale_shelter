@@ -1,6 +1,17 @@
 .images-page {
   min-height: 100vh;
-  background: #050505;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(60, 20, 120, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(0, 140, 120, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(circle at center, #111111 0%, #050505 70%);
   color: #f4efe8;
 }
 
