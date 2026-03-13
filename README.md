@@ -1,16 +1,134 @@
-# React + Vite
+# Pale Shelter — Official Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for the band **Pale Shelter**.
 
-Currently, two official plugins are available:
+Built as a fast, lightweight React site designed to showcase music, photography, and show information while integrating with the Crossworld Creative ecosystem.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Site**  
+https://paleshelter.crossworldcreative.com
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Features
 
-## Expanding the ESLint configuration
+- Music streaming with play tracking
+- Photo gallery with filtering and randomized layout
+- Show listings and upcoming events
+- Electronic Press Kit (EPK)
+- Responsive mobile design
+- Hosted media via cloud storage
+- Deployed to a Linux VM using Nginx
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+# Tech Stack
+
+**Frontend**
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+**Infrastructure**
+
+- Nginx
+- Linux VM
+- Google Cloud Storage
+
+**Backend (shared API)**
+
+- Node.js
+- Express
+
+---
+
+# Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/pale-shelter-site.git
+cd pale-shelter-site
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+---
+
+# Environment Variables
+
+Create a `.env` file in the root of the project:
+
+```
+VITE_API_BASE_URL=https://api.crossworldcreative.com
+```
+
+This is used for tracking song plays and future backend integrations.
+
+---
+
+# Production Build
+
+Build the production bundle:
+
+```bash
+npm run build
+```
+
+Preview locally:
+
+```bash
+npm run preview
+```
+
+---
+
+# Deployment
+
+The site is deployed to a Linux VM and served through **Nginx**.
+
+Typical deployment flow:
+
+```
+git push → pull on VM → rebuild → Nginx serves /dist
+```
+
+---
+
+# Future Improvements
+
+- Show ticket integration
+- Mailing list signup
+- Embedded Spotify player
+- Merch store
+- Fan accounts and comments
+
+---
+
+# Part of Crossworld Creative
+
+This project is part of the **Crossworld Creative** ecosystem, which includes:
+
+- Squash — QA bug tracking platform
+- WTWR — Weather-based clothing app
+- Sanguine Archipelago — RPG project
+- Crossworld Creative portfolio
+
+---
+
+# License
+
+All music, artwork, and branding are property of Pale Shelter.
+
+Site code may be used for educational purposes.
