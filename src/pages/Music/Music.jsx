@@ -1,8 +1,40 @@
+import { useEffect, useState } from "react";
 import "./Music.css";
 import { tracks } from "../../data/tracks";
-import { trackPlay } from "../../utils/plays";
+import { getPlayCounts, trackPlay } from "../../utils/plays";
 
 function Music() {
+  const [playCounts, setPlayCounts] = useState({});
+
+  useEffect(() => {
+    getPlayCounts()
+      .then((counts) => {
+        const mappedCounts = counts.reduce((acc, item) => {
+          acc[item.trackId] = item.count;
+          return acc;
+        }, {});
+
+        setPlayCounts(mappedCounts);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch play counts:", err);
+      });
+  }, []);
+
+  const handleTrackPlay = (trackId) => {
+    const sessionKey = `paleshelter-played-${trackId}`;
+    const alreadyTracked = sessionStorage.getItem(sessionKey);
+
+    trackPlay(trackId).then(() => {
+      if (!alreadyTracked) {
+        setPlayCounts((prev) => ({
+          ...prev,
+          [trackId]: (prev[trackId] || 0) + 1,
+        }));
+      }
+    });
+  };
+
   return (
     <section className="music-page">
       <div className="music-page__hero">
@@ -58,6 +90,9 @@ function Music() {
                   <div className="track-card__text">
                     <h3 className="track-card__title">{track.title}</h3>
                     <p className="track-card__release">{track.release}</p>
+                    <p className="track-card__plays">
+                      Plays: {playCounts[track.id] || 0}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -67,7 +102,7 @@ function Music() {
                 controls
                 preload="metadata"
                 src={track.audioUrl}
-                onPlay={() => trackPlay(track.id)}
+                onPlay={() => handleTrackPlay(track.id)}
               >
                 Your browser does not support the audio element.
               </audio>

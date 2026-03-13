@@ -202,6 +202,12 @@
   width: 100%;
 }
 
+.track-card__plays {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: rgba(244, 239, 232, 0.7);
+}
+
 @media (max-width: 900px) {
   .music-page__hero {
     grid-template-columns: 1fr;
