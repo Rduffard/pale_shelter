@@ -1,5 +1,6 @@
 import "./Music.css";
 import { tracks } from "../../data/tracks";
+import { trackPlay } from "../../utils/plays";
 
 function Music() {
   return (
@@ -66,6 +67,7 @@ function Music() {
                 controls
                 preload="metadata"
                 src={track.audioUrl}
+                onPlay={() => trackPlay(track.id)}
               >
                 Your browser does not support the audio element.
               </audio>
