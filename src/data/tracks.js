@@ -32,7 +32,7 @@ export const tracks = [
     title: "All the Wrong Things",
     release: "Studio Release",
     audioUrl:
-      "https://storage.googleapis.com/crossworld-storage/paleshelter/music/MP3/ALL%20THE%20WRONG%20THINGS.mp3",
+      "https://storage.googleapis.com/crossworld-storage/paleshelter/music/MP3/ALLTHEWRONGTHINGS.mp3",
   },
 
   {
