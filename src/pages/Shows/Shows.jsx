@@ -3,12 +3,14 @@ import "./Shows.css";
 import shows from "../../data/shows";
 
 function formatDate(dateString) {
-  const date = new Date(dateString);
+  const [year, month, day] = dateString.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
 
-  const month = date.toLocaleString("en-US", { month: "short" }).toUpperCase();
-  const day = date.getDate();
+  const monthLabel = date
+    .toLocaleString("en-US", { month: "short" })
+    .toUpperCase();
 
-  return { month, day };
+  return { month: monthLabel, day };
 }
 
 export default function Shows() {
